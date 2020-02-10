@@ -7,6 +7,7 @@ $userid=$_COOKIE['userid'];
 if($userid == "")
 {
     setcookie( 'userid', rand(11111111, 99999999), strtotime( '+1 years' ) );
+    $load='document.formular.submit();';
 }
 
 // [END] SETUSER
@@ -188,7 +189,7 @@ echo "
 $style
 </style>
 </head>
-<body>
+<body onload='$load'>
 <form id='formular' name='formular' method='POST'>
 $content
 </form>
